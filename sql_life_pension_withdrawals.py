@@ -14,6 +14,7 @@ def sql_life_pension_withdrawals(ramo, nome_view="", excluidos=False):
                 named_struct(
                     "amount",           format_number(sum(amount), '#.##'),
                     "unitType",         "MONETARIO",
+                    "unitTypeOthers",   unitTypeOthers,
                     "unit",             named_struct(
                                             "code",        code,
                                             "description", description
@@ -23,6 +24,7 @@ def sql_life_pension_withdrawals(ramo, nome_view="", excluidos=False):
                 named_struct(
                     "amount",           format_number(sum(ChargedAmount), '#.##'),
                     "unitType",         "MONETARIO",
+                    "unitTypeOthers",   unitTypeOthers,
                     "unit",             named_struct(
                                             "code",        code_charge,
                                             "description", desc_charge
@@ -44,6 +46,7 @@ def sql_life_pension_withdrawals(ramo, nome_view="", excluidos=False):
                 description,
                 code_charge,
                 desc_charge,
+                unitTypeOthers,
                 FIECNPJ,
                 FIEName,
                 FIETradeName
