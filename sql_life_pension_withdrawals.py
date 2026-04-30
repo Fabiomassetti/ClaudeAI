@@ -52,7 +52,7 @@ def sql_life_pension_withdrawals(ramo, nome_view="", excluidos=False):
                 FIETradeName
         )
         select
-            pensionIdentification || nvl('.[' || substr(max(liquidationDate), 1, 10) || ']', '') as id,
+            pensionIdentification || nvl('-' || max(substr(liquidationDate, 1, 10)), '') as id,
             pensionIdentification as certificateId,
             true as withdrawalOccurence,
             collect_list(
