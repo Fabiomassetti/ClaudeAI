@@ -26,7 +26,7 @@ CASE
   WHEN upper(trim(insured_address)) RLIKE '^(ROD|RODOV|RODOVIA)[\\s.,]'      THEN 'RODOVIA'
   WHEN upper(trim(insured_address)) RLIKE '^(PC|PCA|PRACA|LG|LARGO)[\\s.,]'  THEN 'PRACA'
   WHEN upper(trim(insured_address)) RLIKE '^(QD|QUADRA|SQS|SQN|SQE|SQW)[\\s.,\\d]' THEN 'QUADRA'
-  WHEN upper(trim(insured_address)) RLIKE '^R[\\s.,]'                         THEN 'RUA'
+  WHEN upper(trim(insured_address)) RLIKE '^(R|RUA)[\\s.,]'                   THEN 'RUA'
   ELSE 'RUA'
 END AS insured_address_type,
 
